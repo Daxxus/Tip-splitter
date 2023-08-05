@@ -1,0 +1,146 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+/* - Font size (paragraph): 15px */
+/* - White: hsl(0, 0%, 100%)
+- Light gray: hsl(212, 45%, 89%)
+- Grayish blue: hsl(220, 15%, 55%)
+- Dark blue: hsl(218, 44%, 22%) */
+html {
+	font-size: 62.5%;
+	--colorLightGreen: rgb(89, 218, 89);
+	--colorDarkGreen: rgb(6, 104, 58);
+	--colorLightGray: hsl(212, 45%, 89%);
+}
+body {
+	height: 100vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Outfit", sans-serif;
+}
+
+.wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-flow: column wrap;
+	width: 80em;
+	height: 50em;
+	background-color: rgb(204, 229, 238);
+}
+.wrapper h1 {
+	margin-bottom: 1em;
+	font-weight: 600;
+}
+.wrapper .splitter {
+	display: grid;
+	grid-template-columns: 2fr 2fr;
+	gap: 2em;
+	border: none;
+	border-radius: 1.5em;
+	width: 60em;
+	height: 30em;
+	background-color: hsl(0, 0%, 100%);
+	padding: 2em;
+}
+.wrapper .details header {
+	display: flex;
+	flex-direction: column;
+}
+.details label {
+	font-size: 1em;
+	font-weight: 500;
+	margin-bottom: 0.3em;
+}
+.details input {
+	padding: 0.5em;
+	border: none;
+	background-color: var(--colorLightGray);
+	border-radius: 0.2em;
+	width: 100%;
+}
+.details input.error {
+	border: 2px solid var(--colorLightGreen);
+}
+.details aside {
+	margin-top: 2em;
+}
+.details aside h2 {
+	margin-bottom: 0.6em;
+	font-weight: 500;
+	font-size: 1em;
+}
+.details aside .tips {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1em;
+	color: white;
+	text-align: center;
+}
+.details aside .tips option {
+	background-color: var(--colorDarkGreen);
+	border-radius: 0.2em;
+	padding: 1em;
+	cursor: pointer;
+	font-size: 1.2em;
+}
+
+.details .numberOfPeople {
+	margin-top: 3em;
+}
+.details .numberOfPeople label {
+	display: flex;
+	justify-content: space-between;
+}
+.numberOfPeople span {
+	color: crimson;
+	display: none;
+}
+.numberOfPeople input.error {
+	border: 2px solid crimson;
+}
+
+.details .numberOfPeople input {
+	margin-top: 0.5em;
+}
+
+.wrapper .results {
+	background-color: var(--colorDarkGreen);
+	border-radius: 1.5em;
+	padding: 2em;
+	color: whitesmoke;
+}
+.wrapper .results p,
+.wrapper .details p {
+	font-size: 1.5em;
+}
+.results .res {
+	display: flex;
+	justify-content: space-between;
+	margin: 2em 0;
+}
+.results .res p {
+	font-size: 2.5em;
+	color: var(--colorLightGreen);
+	font-weight: bold;
+}
+.results small {
+	color: var(--colorLightGreen);
+}
+.results button {
+	width: 100%;
+	padding: 0.5em 4em;
+	border-radius: 0.3em;
+	font-size: 1.5em;
+	margin-top: 4em;
+	cursor: pointer;
+	background-color: var(--colorLightGreen);
+	transition: color 0.5s, background-color 0.5s;
+}
+.results button:hover {
+	background-color: var(--colorDarkGreen);
+	color: white;
+}

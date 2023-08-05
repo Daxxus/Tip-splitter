@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tipCalc.css">
+    <title>Tip Calc</title>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>Tip Splitter</h1>
+        <main class="splitter">
+            <section class="details">
+                <header>
+                    <label for="bill">Bill </label>
+                    <input id="bill" type="number" placeholder="$...">
+                </header>
+                <aside>
+                    <h2>Select Tip %</h2>
+                    <section class="tips">
+                        <option class="tip" value="0.05">5%</option>
+                        <option class="tip" value=".1">10%</option>
+                        <option class="tip" value=".15">15%</option>
+                        <option class="tip" value=".25">25%</option>
+                        <option class="tip" value=".5">50%</option>
+                        <input class="custom" type="number" placeholder="Custom" id="custom" >
+
+                    </section>
+                    <section class="numberOfPeople">
+                        <label for="people">Number of People <span id="peopleSpan">Can't be 0</span></label>
+                        <input class="people" type="number" placeholder="👨...">
+
+                    </section>
+
+                </aside>
+            </section>
+            <section class="results">
+                <div class="amount res">
+                    <div class="tipContent">
+                        <h3>Tip Amount </h3>
+                        <small>/ person</small>
+                    </div>
+                    <p>$ <span id="spanAmount">0.00</span></p>
+                </div>
+                <div class="total res">
+                    <div class="tipContent">
+                        <h3>Total </h3>
+                        <small>/ person</small>
+                    </div>
+                    <p>$ <span id="spanTotal">0.00</span></p>
+                </div>
+                <button class="btn">Reset</button>
+            </section>
+        </main>
+    </div>
+    <script src="JS/tipCalc.js"></script>
+</body>
+
+</html>
