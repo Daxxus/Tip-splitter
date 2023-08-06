@@ -51,19 +51,20 @@ class Tip {
 		this.bill = this.inputBill.value
 		this.custom = this.inputCustom.value
 		this.numberOfPersonss = this.inputPeople.value
+
 		if (this.numberOfPersonss <= "0") {
 			this.inputPeople.classList.add("error")
 			this.span.style.display = "block"
 		}
 
 		if (this.inputCustom.value !== "") {
-			const totalPerPerson: number =
-				(parseFloat(this.bill) +
-					Number(this.bill) * (Number(this.custom) / 100)) /
-				parseInt(this.numberOfPersonss)
-			const tipAmount: number =
-				parseFloat(Number(this.bill) * (Number(this.custom) / 100)) /
-				parseInt(this.numberOfPersonss)
+			const totalPerPerson =
+				(Number(this.bill) + Number(this.bill) * (Number(this.custom) / 100)) /
+				Number(this.numberOfPersonss)
+
+			const tipAmount =
+				(Number(this.bill) * (Number(this.custom) / 100)) /
+				Number(this.numberOfPersonss)
 
 			this.notANumber(totalPerPerson, tipAmount)
 		}
@@ -72,16 +73,14 @@ class Tip {
 	listeners = () => {
 		window.addEventListener("input", this.startApp)
 		this.button.addEventListener("click", this.reset) //co w przypadku argumentu
-		this.tips.forEach((tip) =>
+		this.tips.forEach((tip: any) =>
 			tip.addEventListener("click", () => {
 				this.inputCustom.value = ""
-				const totalPerPerson: number =
-					(parseFloat(this.bill) +
-						parseFloat(Number(this.bill) * Number(tip.value))) /
-					parseInt(this.numberOfPersonss)
+				const totalPerPerson =
+					(Number(this.bill) + Number(this.bill) * Number(tip.value)) /
+					Number(this.numberOfPersonss)
 				const tipAmount =
-					parseFloat(Number(this.bill) * tip.value) /
-					parseInt(this.numberOfPersonss)
+					(Number(this.bill) * tip.value) / Number(this.numberOfPersonss)
 
 				this.notANumber(totalPerPerson, tipAmount)
 			})
@@ -96,7 +95,7 @@ class Tip {
 		this.total.textContent = "0.00"
 		this.calculate()
 	}
-	
+
 	notANumber = (totalPerPerson: any, tipAmount: any) => {
 		if (
 			Number.isNaN(totalPerPerson) ||
