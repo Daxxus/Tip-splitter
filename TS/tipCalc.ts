@@ -96,7 +96,7 @@ class Tip {
 		this.calculate()
 	}
 
-	notANumber = (totalPerPerson: any, tipAmount: any) => {
+	notANumber = (totalPerPerson: number, tipAmount: number) => {
 		if (
 			Number.isNaN(totalPerPerson) ||
 			totalPerPerson === Infinity ||
